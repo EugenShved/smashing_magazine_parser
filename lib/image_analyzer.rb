@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require "openai"
 require "open-uri"
+require "openai"
 
 class ImageAnalyzer
   API_KEY = "CHAT GPT API KEY"
@@ -36,6 +36,6 @@ class ImageAnalyzer
   end
 
   def chat_gpt_client
-    @chat_gpt_client ||= OpenAI::Client.new(api_key: API_KEY)
+    @chat_gpt_client ||= OpenAI::Client.new(access_token: API_KEY)
   end
 end
