@@ -1,9 +1,11 @@
-require 'optparse'
+# frozen_string_literal: true
+
+require "optparse"
 
 class CliArgumentError < StandardError; end
 
 class ArgumentParser
-  CLI_ARGUMENTS = %i[month theme].freeze
+  CLI_ARGUMENTS = [:month, :theme].freeze
 
   def initialize
     @options = {}
@@ -11,11 +13,11 @@ class ArgumentParser
 
   def parse
     OptionParser.new do |parser|
-      parser.on('--month MONTH', 'Specify the month') { |month| @options[:month] = month }
-      parser.on('--theme THEME', 'Specify the theme') { |theme| @options[:theme] = theme }
+      parser.on("--month MONTH", "Specify the month") { |month| @options[:month] = month }
+      parser.on("--theme THEME", "Specify the theme") { |theme| @options[:theme] = theme }
     end.parse!
     check_arguments
-    parse_date(@options[:month]).merge({theme: @options[:theme]})
+    parse_date(@options[:month]).merge({ theme: @options[:theme] })
   end
 
   private
@@ -31,4 +33,3 @@ class ArgumentParser
     end
   end
 end
-
