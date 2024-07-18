@@ -17,6 +17,7 @@ class LinkFinder
   FIRST_RECORDED_YEAR = 2008
   FIRST_RECORDED_MONTH = 7
   MONTH_NAMES = (1..12).map { |month| Date::MONTHNAMES[month].downcase }
+  include HtmlDocumentParser
 
   attr_reader :year, :month, :month_name, :current_date
 
