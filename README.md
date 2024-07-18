@@ -5,10 +5,11 @@ The Smashing Magazine website publishes desktop wallpapers every month. Let's au
 ### Conditions
 
 - Ruby 3+
-- Any third-party libraries
+- Third-party libraries
 - Ruby Style Guide (Shopify)
-- Anthropic Claude (provides $5 credit)
-- If there's time left, you can cover the utility with tests
+- ~~Anthropic Claude (provides $5 credit)~~
+- Please set up Chat GPT key [here](https://github.com/EugenShved/smashing_magazine_parser/blob/main/lib/image_analyzer.rb#L7)
+- Tests coverage more than 60%
 
 It is assumed that the wallpaper download script will be run with parameters, for example:
 
@@ -25,7 +26,3 @@ or
 
 * The utility should download wallpapers in all available resolutions
 * If wallpapers are available in versions with and without a calendar, the utility should download both.
-
-### Results
-
-Place the utility in your personal GitHub account as a public project.
