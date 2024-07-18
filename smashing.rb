@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 require "./lib/argument_parser"
+require "./lib/link_finder"
+require "./lib/image_link_finder"
+require "./lib/image_analyzer"
+require "./lib/image_downloader"
 
 class SmashingCLI
   class << self
