@@ -6,7 +6,8 @@ class SmashingCLI
   class << self
     def run
       arguments = ArgumentParser.new.parse
-      LinkFinder.new(arguments[:month], arguments[:year]).find
+      link = LinkFinder.new(arguments[:month], arguments[:year]).find
+      image_links = ImageLinkFinder.new(link).find
     rescue CliArgumentError => e
       puts e.message
     end
