@@ -3,6 +3,7 @@
 require "nokogiri"
 require "open-uri"
 require "date"
+require_relative "html_document_parser"
 
 class OutOfRangeError < StandardError; end
 class LinkNotFoundError < StandardError; end
@@ -74,11 +75,6 @@ class LinkFinder
 
   def date_pattern
     @date_pattern ||= "#{year}/#{month.to_s.rjust(2, "0")}"
-  end
-
-  def fetch_doc(url)
-    html = OpenURI.open_uri(url.to_s).read
-    Nokogiri::HTML(html)
   end
 
   def parse_urls(doc)
