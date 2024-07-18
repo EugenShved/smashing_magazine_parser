@@ -27,7 +27,7 @@ class ImageDownloader
     return if urls.empty?
 
     urls.each do |url|
-      file_name = url.split('/').last
+      file_name = url.split("/").last
       File.open(file_name, "wb") do |file|
         file.write(OpenURI.open_uri(url.to_s).read)
       end
