@@ -21,11 +21,11 @@ class LinkFinder
 
   attr_reader :year, :month, :month_name, :current_date
 
-  def initialize(month, year, current_date = Time.now)
+  def initialize(month, year)
     @month = month.to_i
     @year = year.to_i
     @month_name = MONTH_NAMES[@month - 1]
-    @current_date = current_date
+    @current_date = Date.today
   end
 
   def find
