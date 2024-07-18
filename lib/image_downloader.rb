@@ -3,6 +3,7 @@
 require_relative "html_document_parser"
 
 class ImageDownloader
+  include HtmlDocumentParser
   attr_reader :ref_image_links, :page_link
 
   BASE_URL = "https://smashingmagazine.com"
@@ -26,7 +27,7 @@ class ImageDownloader
     return if urls.empty?
 
     urls.each do |url|
-      file_name = File.basename(OpenURI.open_uri(url.to_s).read)
+      file_name = url.split('/').last
       File.open(file_name, "wb") do |file|
         file.write(OpenURI.open_uri(url.to_s).read)
       end
