@@ -1,0 +1,24 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mini_portile2 (2.8.5)
+    nokogiri (1.16.0)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
+    optparse (0.3.1)
+    racc (1.8.0)
+
+PLATFORMS
+  arm64-darwin-22
+  ruby
+
+DEPENDENCIES
+  nokogiri
+  optparse
+
+RUBY VERSION
+   ruby 3.2.2p53
+
+BUNDLED WITH
+   2.5.10
+
