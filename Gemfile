@@ -1,6 +1,9 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-ruby '3.2.2'
+source "https://rubygems.org"
 
-gem 'nokogiri'
-gem 'optparse'
+ruby "3.2.2"
+
+gem "nokogiri"
+gem "optparse"
+gem "rubocop-shopify", require: false
