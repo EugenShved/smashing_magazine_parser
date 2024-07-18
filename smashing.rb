@@ -9,6 +9,7 @@ class SmashingCLI
       link = LinkFinder.new(arguments[:month], arguments[:year]).find
       image_links = ImageLinkFinder.new(link).find
       verified_image_links = ImageAnalyzer.new(image_links, arguments[:theme]).analyze
+      ImageDownloader.new(verified_image_links, link).download
     rescue CliArgumentError => e
       puts e.message
     end
